@@ -30,7 +30,16 @@ The source code is based on a NodeJS package structure and uses NPM to import li
 ## Setting up the Components
 1. Define the [AWS Lambda function][2]
 2. [Create Amazon Simple Notification Service (SNS) Topic][3] through the console
-3. Create [AWS CloudWatch event rule][4]. The rule should define the frequency of execution through a schedule (_fixed rate_ or Cron expression). The target should be the Lambda function created in _Step 1_  with the _Configure Input_ having a JSON object containing the configuration object (event input values) of the function. 
+3. Create [AWS CloudWatch event rule][4]. The rule should define the frequency of execution through a schedule (_fixed rate_ or Cron expression). The target should be the Lambda function created in _Step 1_  with the _Configure Input_ having a JSON object containing the configuration object (event input values) of the function. The following is an example configuration:
+
+```json
+{   
+	"accessToken": "eyJhbGciOiJ",   
+	"minHourlySteps": 250,   
+	"snsTopicArn": "arn:aws:sns:us-east-1:999999999:movenow",   
+	"snsTopicRegion": "us-east-1" 
+}
+```
 
 ## Working with the source code
 - Clone or fork this repository
