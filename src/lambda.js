@@ -81,7 +81,7 @@ exports.handler = function(event, context, callback) {
 
 			/// Send SNS message
   			sns.publish(publishParams, function(err, data) {
-    			console.log("MessageId - ${data.MessageId}");
+    			console.log(`MessageId - ${data.MessageId}`);
   			});		
 		}
 
@@ -142,7 +142,7 @@ exports.handler = function(event, context, callback) {
 				'Authorization': 'Bearer ' + accessToken
 			}
 		}).then(response => {
-			console.log("Returned payload: \n" + response.data["activities-steps-intraday"]);
+			console.log("Returned payload: \n" + JSON.stringify(response.data["activities-steps-intraday"]));
 			let dataset = response.data["activities-steps-intraday"].dataset;
 			return dataset;
 		}).catch(error => {
