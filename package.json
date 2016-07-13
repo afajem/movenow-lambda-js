@@ -1,0 +1,24 @@
+{
+  "name": "movenow-lambda-js",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to determine if a Fitbit user has been sedentary over the course of an hour.",
+  "main": "lambda.js",
+  "scripts": {
+    "setup": "mkdir -p dist",
+    "bundle": "zip -r dist/bundle.zip node_modules && zip -j dist/bundle.zip src/lambda.js",
+    "deploy": "aws lambda update-function-code --function-name movenowFetcherNode --zip-file fileb://./dist/bundle.zip",
+    "build": "npm install && npm run setup && npm run bundle && npm run deploy"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "fitbit"
+  ],
+  "author": "Niran Fajemisin (https://github.com/afajem)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.12.0",
+    "promise": "^7.1.1",
+    "moment": "^2.14.1"
+  }
+}
