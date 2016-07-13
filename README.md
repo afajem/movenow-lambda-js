@@ -11,7 +11,7 @@ The second flow is the are that this example tackles. A scheduled rule is create
 
 These two flows are depicted in the diagram below:    
 
-[[ADD DIAGRAM HERE!]]
+![AWS Lambda call flow](aws-lambda-flow.png)
 
 
 ## Content
