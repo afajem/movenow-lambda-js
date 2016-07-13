@@ -1,4 +1,4 @@
-# MoveNow - A Fitbit Notifier
+# MoveNow - An AWS Lambda-based Fitbit Notifier
 
 ## Why
 The reason behind this example was that I needed to have a mechanism for reminding myself to regularly get some steps in every hour. While this feature is supported by newer Fitbit devices, my [Fitbit Charge](https://www.fitbit.com/charge#features) was missing the _Reminders to Move_ function. My search for an approach to support this service without the need to manage servers etc. lead me to investigating [AWS Lambda][1]. AWS Lambda is a part of the AWS compute offering that lets one run code in response to events without having to provision or manage servers.
@@ -20,7 +20,7 @@ The source code is based on a NodeJS package structure and uses NPM to import li
 - [src/lambda.js][2]: The lambda function to transform the payload
 - [package.json](package.json): Defines the packaging tasks and the npm modules in use
 
-## Requirement
+## Requirements
 - Need to create an [AWS account](http://docs.aws.amazon.com/lambda/latest/dg/setting-up.html)
 - Need to setup [AWS CLI](http://docs.aws.amazon.com/lambda/latest/dg/setup-awscli.html) with the credentials of your AWS account
 - NodeJS and NPM need to be installed 
